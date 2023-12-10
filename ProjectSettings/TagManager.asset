@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - DeathArea
+  - Ground
+  - ScoreArea
   layers:
   - Default
   - TransparentFX

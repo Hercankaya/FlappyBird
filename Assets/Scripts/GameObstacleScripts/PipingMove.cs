@@ -6,7 +6,7 @@ public class PipingMove : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, 7f);
+       // Destroy(gameObject, 7f);
     }
 
     private void FixedUpdate()
