@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameUIController : MonoBehaviour
 {
@@ -10,29 +11,25 @@ public class GameUIController : MonoBehaviour
     public GameObject TutorialUICanvas;
     public Text ScoreText;
     public TextMeshProUGUI DeadUI;
-    private int _score ;
+    private int _score;
     
     private void Start()
     {
         TutorialUICanvas.SetActive(true);
         GameUICanvas.SetActive(true);
         _score = 0;
-
+          
     }
-
-    //
     private void OnEnable()
     {
         GameEvents.OnPlayerStateChanged += HandlePlayerStateChanged;
         GameEvents.OnScoreIncreased += IncreaseScore;
     }
-
     private void OnDisable()
     {
         GameEvents.OnPlayerStateChanged -= HandlePlayerStateChanged;
         GameEvents.OnScoreIncreased -= IncreaseScore;
     }
-
     private void HandlePlayerStateChanged(PlayerStateBase newState)
     {
         if (newState is PlayerStateDead)
@@ -52,12 +49,9 @@ public class GameUIController : MonoBehaviour
             }
         }
     }
-
-    /// 
     private void IncreaseScore()
     {
         _score++;
-        
         UpdateScoreUI();
     }
     private void UpdateScoreUI()
@@ -68,9 +62,7 @@ public class GameUIController : MonoBehaviour
         }
     }
 
-    /// 
-
-    public void GamePauseToggle()
+    private void GamePauseToggle()
     {
         _isGamePaused = !_isGamePaused;
 
@@ -93,4 +85,5 @@ public class GameUIController : MonoBehaviour
     {
         Time.timeScale = 1f;
     }
+
 }

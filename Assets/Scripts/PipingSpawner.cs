@@ -3,14 +3,12 @@ using UnityEngine;
 
 public class PipingSpawner : MonoBehaviour
 
-{ // Bu klas  düzenlenecek !!
-    
+{ 
     public GameObject PipingPrefab;
     public float PipinLength;
     public float time;
     private bool _PlayerLive =true;
    
-
     private void OnEnable()
     {
         GameEvents.OnPlayerStateChanged += HandlePlayerStateChanged;
@@ -21,28 +19,26 @@ public class PipingSpawner : MonoBehaviour
     }
    private void HandlePlayerStateChanged(PlayerStateBase newState)
     {
-        if (newState is PlayerStateFlying || newState is PlayerStateFalling)
+        if (newState is PlayerStateDead )
         {
-            _PlayerLive = true;
-            //StartCoroutine(SpawnObject(time));
+            _PlayerLive = false;
         }
-        //if(newState is PlayerStateDead && newState is PlayerStateIdle)
-        //{
-        //    _PlayerLive = false;
-        //}
     }
     private void Start()
     {
         if (_PlayerLive == true)
         {
-            StartCoroutine(SpawnObject(time));
+            Invoke("StartSpawning", 5f);
         }
-       
+    }
+    private void StartSpawning()
+    {
+        StartCoroutine(SpawnObject(time));
     }
 
     private IEnumerator SpawnObject(float time)
     {
-        while (_PlayerLive == true) // _PlayerLive true olduðu sürece çalýþ
+        while (_PlayerLive == true) 
         {
             Instantiate(PipingPrefab, new Vector3(3, Random.Range(-PipinLength, PipinLength), 0), Quaternion.identity);
             yield return new WaitForSeconds(time);

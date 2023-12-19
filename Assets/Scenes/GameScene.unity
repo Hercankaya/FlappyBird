@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7650073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -544,12 +544,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3293254144468843874, guid: d78915d5b02bcb4488ac245f60d6062d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.8495896
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293254144468843874, guid: d78915d5b02bcb4488ac245f60d6062d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1284559
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293254144468843874, guid: d78915d5b02bcb4488ac245f60d6062d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.339
+      value: 0.81
       objectReference: {fileID: 0}
     - target: {fileID: 3293254144468843874, guid: d78915d5b02bcb4488ac245f60d6062d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.008
+      value: -1.1121
       objectReference: {fileID: 0}
     - target: {fileID: 3293254144468843874, guid: d78915d5b02bcb4488ac245f60d6062d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -678,7 +686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &496384510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1118,7 +1126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 962409644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00000011533629, y: -0.014000036, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1804,7 +1812,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1545993797}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 841905491}
+        m_TargetAssemblyTypeName: GameUIController, Assembly-CSharp
+        m_MethodName: Respawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1545993797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1937,7 +1957,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1748868342
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1953,11 +1973,11 @@ RectTransform:
   m_Father: {fileID: 1503209740}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -716, y: 1451}
-  m_SizeDelta: {x: 300.831, y: 303.831}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 73, y: -63}
+  m_SizeDelta: {x: 223.86597, y: 234.12195}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1748868343
 MonoBehaviour:
   m_ObjectHideFlags: 0

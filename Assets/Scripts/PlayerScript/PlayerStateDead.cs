@@ -14,7 +14,7 @@ public class PlayerStateDead : PlayerStateBase
     }
     public override void ExitState(PlayerController playerController)
     {
-       ;
+       
     }
    
 
