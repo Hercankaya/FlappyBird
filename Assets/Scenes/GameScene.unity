@@ -1044,7 +1044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &962409645
 Animator:
   serializedVersion: 5
@@ -1182,7 +1182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b1ae5a73e2d2b4992dbe50ce1fb98a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpPower: 3
 --- !u!1 &968486168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,8 +1212,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PipingPrefab: {fileID: 6452391950234489648, guid: 0544e4516997d1740a0892e21d434ebc, type: 3}
-  PipinLength: 0.4
-  time: 2
+  PipinLength: 0
+  time: 2.5
 --- !u!4 &968486170
 Transform:
   m_ObjectHideFlags: 0

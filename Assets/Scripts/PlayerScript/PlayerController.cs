@@ -7,9 +7,13 @@ public class PlayerController : MonoBehaviour
     private PlayerStateFalling _fallingState;
     private PlayerStateFlying _flyingState;
     private PlayerStateDead _deadState;
+
     private Rigidbody2D _rigidbody;
     public Rigidbody2D Rigidbody => _rigidbody;
-    public int JumpPower = 3;
+    private float _jumpPower = 1.7f;
+    public float JumpPower => _jumpPower;
+
+
 
     private void Start()
     {
@@ -51,6 +55,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("DeathArea"))
         {
             ChangeState(_deadState);
+            
         }
         if(other.CompareTag("ScoreArea"))
         {

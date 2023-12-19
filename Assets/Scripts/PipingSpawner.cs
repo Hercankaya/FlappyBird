@@ -7,6 +7,7 @@ public class PipingSpawner : MonoBehaviour
     public GameObject PipingPrefab;
     public float PipinLength;
     public float time;
+    public float SpawnerStartTime;
     private bool _PlayerLive =true;
    
     private void OnEnable()
@@ -28,7 +29,7 @@ public class PipingSpawner : MonoBehaviour
     {
         if (_PlayerLive == true)
         {
-            Invoke("StartSpawning", 5f);
+            Invoke("StartSpawning", SpawnerStartTime);
         }
     }
     private void StartSpawning()
