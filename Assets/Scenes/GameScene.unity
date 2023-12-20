@@ -545,7 +545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3293254144468843874, guid: d78915d5b02bcb4488ac245f60d6062d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.8495896
+      value: 1.8845469
       objectReference: {fileID: 0}
     - target: {fileID: 3293254144468843874, guid: d78915d5b02bcb4488ac245f60d6062d, type: 3}
       propertyPath: m_LocalScale.y
@@ -553,11 +553,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3293254144468843874, guid: d78915d5b02bcb4488ac245f60d6062d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.81
+      value: 0.758
       objectReference: {fileID: 0}
     - target: {fileID: 3293254144468843874, guid: d78915d5b02bcb4488ac245f60d6062d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1121
+      value: -1.339
       objectReference: {fileID: 0}
     - target: {fileID: 3293254144468843874, guid: d78915d5b02bcb4488ac245f60d6062d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -790,7 +790,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.27
+  orthographic size: 1.3737319
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1044,7 +1044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &962409645
 Animator:
   serializedVersion: 5
@@ -1164,11 +1164,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0020428624, y: -0.020088034}
-  m_Size: {x: 0.15638137, y: 0.11982523}
+  m_Offset: {x: 0.0003724375, y: -0.018276544}
+  m_Size: {x: 0.13947459, y: 0.10412632}
   m_Direction: 1
 --- !u!114 &962409651
 MonoBehaviour:
@@ -1212,8 +1212,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PipingPrefab: {fileID: 6452391950234489648, guid: 0544e4516997d1740a0892e21d434ebc, type: 3}
-  PipinLength: 0
+  PipinLength: 0.4
   time: 2.5
+  SpawnerStartTime: 0
 --- !u!4 &968486170
 Transform:
   m_ObjectHideFlags: 0
@@ -2339,12 +2340,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7617497718000501352, guid: 1532ef953664af04693a56846f93458c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0860589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617497718000501352, guid: 1532ef953664af04693a56846f93458c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.037
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617497718000501352, guid: 1532ef953664af04693a56846f93458c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0109
       objectReference: {fileID: 0}
     - target: {fileID: 7617497718000501352, guid: 1532ef953664af04693a56846f93458c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.0374
       objectReference: {fileID: 0}
     - target: {fileID: 7617497718000501352, guid: 1532ef953664af04693a56846f93458c, type: 3}
       propertyPath: m_LocalPosition.z

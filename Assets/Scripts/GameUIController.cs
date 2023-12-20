@@ -61,7 +61,6 @@ public class GameUIController : MonoBehaviour
             ScoreText.text = _score.ToString();
         }
     }
-
     private void GamePauseToggle()
     {
         _isGamePaused = !_isGamePaused;
@@ -75,12 +74,10 @@ public class GameUIController : MonoBehaviour
             ResumeGame();
         }
     }
-
     void PauseGame()
     {
         Time.timeScale = 0f;
     }
-
     void ResumeGame()
     {
         Time.timeScale = 1f;
