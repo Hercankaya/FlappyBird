@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameUIController : MonoBehaviour
 {
+    [SerializeField] Image PlayImage;
+    [SerializeField] Image PauseImage;
     private bool _isGamePaused = false;
     public GameObject DeadUICanvas;
     public GameObject GameUICanvas;
@@ -12,6 +14,7 @@ public class GameUIController : MonoBehaviour
     public Text ScoreText;
     public TextMeshProUGUI DeadUI;
     private int _score;
+    
     
     private void Start()
     {
@@ -61,7 +64,7 @@ public class GameUIController : MonoBehaviour
             ScoreText.text = _score.ToString();
         }
     }
-    private void GamePauseToggle()
+    public void GamePauseToggle()
     {
         _isGamePaused = !_isGamePaused;
 
@@ -77,10 +80,14 @@ public class GameUIController : MonoBehaviour
     void PauseGame()
     {
         Time.timeScale = 0f;
+        PauseImage.enabled = false;
+        PlayImage.enabled = true;
     }
     void ResumeGame()
     {
         Time.timeScale = 1f;
+        PauseImage.enabled = true;
+        PlayImage.enabled = false;
     }
 
 }
