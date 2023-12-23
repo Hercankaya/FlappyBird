@@ -7,31 +7,27 @@ public class GameUIController : MonoBehaviour
 {
     [SerializeField] Image PlayImage;
     [SerializeField] Image PauseImage;
-    private bool _isGamePaused = false;
     public GameObject DeadUICanvas;
     public GameObject GameUICanvas;
     public GameObject TutorialUICanvas;
     public Text ScoreText;
     public TextMeshProUGUI DeadUI;
-    private int _score;
-    
+    public GameManager GameManager;
     
     private void Start()
     {
         TutorialUICanvas.SetActive(true);
         GameUICanvas.SetActive(true);
-        _score = 0;
-          
     }
     private void OnEnable()
     {
         GameEvents.OnPlayerStateChanged += HandlePlayerStateChanged;
-        GameEvents.OnScoreIncreased += IncreaseScore;
+        GameEvents.OnGamePausedStateChanged += HandleGamePausedStateChanged;
     }
     private void OnDisable()
     {
         GameEvents.OnPlayerStateChanged -= HandlePlayerStateChanged;
-        GameEvents.OnScoreIncreased -= IncreaseScore;
+        GameEvents.OnGamePausedStateChanged -= HandleGamePausedStateChanged;
     }
     private void HandlePlayerStateChanged(PlayerStateBase newState)
     {
@@ -41,7 +37,7 @@ public class GameUIController : MonoBehaviour
             {
                 DeadUICanvas.SetActive(true);
                 GameUICanvas.SetActive(false);
-                DeadUI.text = _score.ToString();
+                DeadUI.text = GameManager.Score.ToString();
             }
         }
         if (!(newState is PlayerStateIdle)) {
@@ -51,43 +47,35 @@ public class GameUIController : MonoBehaviour
                 TutorialUICanvas.SetActive(false);
             }
         }
-    }
-    private void IncreaseScore()
-    {
-        _score++;
         UpdateScoreUI();
     }
     private void UpdateScoreUI()
     {
-        if (ScoreText != null) 
+        if (ScoreText != null)
         {
-            ScoreText.text = _score.ToString();
+            ScoreText.text = GameManager.Score.ToString();
+           
         }
     }
-    public void GamePauseToggle()
-    {
-        _isGamePaused = !_isGamePaused;
 
-        if (_isGamePaused)
+    //Pause butonun ýmage deðiþikliði .
+    private void HandleGamePausedStateChanged(bool isGamePaused)
+    {
+       
+        if (isGamePaused)
         {
-            PauseGame();
+            PauseImage.enabled = false;
+            PlayImage.enabled = true;
+            //Debug.Log("Oyun durdu ");
         }
         else
         {
-            ResumeGame();
+            PlayImage.enabled = false;
+            PauseImage.enabled = true;
+            //Debug.Log("Oyun baþladý ");
         }
     }
-    void PauseGame()
-    {
-        Time.timeScale = 0f;
-        PauseImage.enabled = false;
-        PlayImage.enabled = true;
-    }
-    void ResumeGame()
-    {
-        Time.timeScale = 1f;
-        PauseImage.enabled = true;
-        PlayImage.enabled = false;
-    }
+
+
 
 }

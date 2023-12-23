@@ -13,8 +13,6 @@ public class PlayerController : MonoBehaviour
     private float _jumpPower = 1.7f;
     public float JumpPower => _jumpPower;
 
-
-
     private void Start()
     {
         PlayerStates();

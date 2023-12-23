@@ -6,7 +6,7 @@ public class PlayerStateDead : PlayerStateBase
 
     public override void EnterState(PlayerController playerController)
     {
-        Time.timeScale = 0f; 
+       
     }
     public override void UpdateState(PlayerController playerController)
     {
