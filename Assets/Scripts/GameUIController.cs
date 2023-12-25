@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class GameUIController : MonoBehaviour
 {
@@ -19,27 +18,25 @@ public class GameUIController : MonoBehaviour
         TutorialUICanvas.SetActive(true);
         GameUICanvas.SetActive(true);
     }
+    private void Update()
+    {
+        UpdateScoreUI();
+    }
     private void OnEnable()
     {
         GameEvents.OnPlayerStateChanged += HandlePlayerStateChanged;
         GameEvents.OnGamePausedStateChanged += HandleGamePausedStateChanged;
+        GameEvents.OnGround += DeadStateUIActive;
     }
     private void OnDisable()
     {
         GameEvents.OnPlayerStateChanged -= HandlePlayerStateChanged;
         GameEvents.OnGamePausedStateChanged -= HandleGamePausedStateChanged;
+        GameEvents.OnGround -= DeadStateUIActive;
     }
+
     private void HandlePlayerStateChanged(PlayerStateBase newState)
     {
-        if (newState is PlayerStateDead)
-        {
-            if (DeadUICanvas != null && GameUICanvas != null )
-            {
-                DeadUICanvas.SetActive(true);
-                GameUICanvas.SetActive(false);
-                DeadUI.text = GameManager.Score.ToString();
-            }
-        }
         if (!(newState is PlayerStateIdle)) {
 
             if (TutorialUICanvas != null)
@@ -47,14 +44,21 @@ public class GameUIController : MonoBehaviour
                 TutorialUICanvas.SetActive(false);
             }
         }
-        UpdateScoreUI();
+    }
+    private void DeadStateUIActive()
+    {
+        if (DeadUICanvas != null && GameUICanvas != null)
+        {
+            DeadUICanvas.SetActive(true);
+            GameUICanvas.SetActive(false);
+            DeadUI.text = GameManager.Score.ToString();
+        }
     }
     private void UpdateScoreUI()
     {
         if (ScoreText != null)
         {
             ScoreText.text = GameManager.Score.ToString();
-           
         }
     }
 

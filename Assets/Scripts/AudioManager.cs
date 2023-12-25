@@ -33,18 +33,19 @@ public class AudioManager : MonoBehaviour
     {
         GameEvents.OnPlayerStateChanged += HandlePlayerStateChanged;
         GameEvents.OnScoreIncreased += Coin;
+        GameEvents.OnGround += Dead;
     }
     private void OnDisable()
     {
         GameEvents.OnPlayerStateChanged -= HandlePlayerStateChanged;
         GameEvents.OnScoreIncreased -= Coin;
+        GameEvents.OnGround -= Dead;
     } 
     private void HandlePlayerStateChanged(PlayerStateBase newState)
     {
         if (newState is PlayerStateDead)
         {
             Damage();
-            Dead();
         }
         if (newState is PlayerStateFlying)
         {

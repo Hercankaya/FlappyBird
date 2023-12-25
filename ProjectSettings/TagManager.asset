@@ -7,6 +7,8 @@ TagManager:
   - DeathArea
   - Ground
   - ScoreArea
+  - GroundArea
+  - DamageArea
   layers:
   - Default
   - TransparentFX

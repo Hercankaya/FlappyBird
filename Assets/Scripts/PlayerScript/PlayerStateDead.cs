@@ -6,7 +6,7 @@ public class PlayerStateDead : PlayerStateBase
 
     public override void EnterState(PlayerController playerController)
     {
-       
+        playerController.transform.rotation = Quaternion.Euler(0, 0, -90);
     }
     public override void UpdateState(PlayerController playerController)
     {

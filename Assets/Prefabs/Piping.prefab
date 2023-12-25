@@ -45,7 +45,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.04977095, y: -0.030567408}
+  m_Offset: {x: 0.04977095, y: -0.03282079}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,7 +56,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19504929, y: 0.4220649}
+  m_Size: {x: 0.10942054, y: 0.42882508}
   m_EdgeRadius: 0
 --- !u!1 &6452391949041829018
 GameObject:
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 6452391949041829015}
   m_Layer: 0
   m_Name: Up Pipe
-  m_TagString: DeathArea
+  m_TagString: DamageArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 6452391949047208423}
   m_Layer: 0
   m_Name: Down Pipe
-  m_TagString: DeathArea
+  m_TagString: DamageArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -289,7 +289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6452391950234489646}
-  - component: {fileID: 6452391950234489647}
+  - component: {fileID: 6463776170157977407}
   m_Layer: 0
   m_Name: Piping
   m_TagString: Untagged
@@ -315,7 +315,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6452391950234489647
+--- !u!114 &6463776170157977407
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -324,7 +324,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6452391950234489648}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b466fddbf5130e240a82e6b477890277, type: 3}
+  m_Script: {fileID: 11500000, guid: 6dbf50b73f8c0d849a34aa99ddcf5a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 0.5
