@@ -11,9 +11,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D Rigidbody => _rigidbody;
     private float _jumpPower = 1.7f;
     public float JumpPower => _jumpPower;
-    //private bool _isGround;
-    //public bool IsGorund => _isGround;
-
+   
     private void Start()
     {
         PlayerStates();
